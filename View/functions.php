@@ -10,4 +10,7 @@ function get_title(){
 	return $title[sizeof($title)-1];
 }
 
+
+
+
  ?>

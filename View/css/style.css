@@ -84,10 +84,19 @@ h2 {
 	font-style:normal;
 	font-weight:400;
 	line-height:1.2em;
-	padding:38px 0 11px 0;
 	color:#000;
 	letter-spacing:-1px
 }
+.register_c{
+	text-align: center;
+}
+
+.login_input{
+	border-style: solid;
+	border-width: 1px;
+	color: darkgray;
+}
+
 h2.under {
 	border-bottom:1px solid #e5e5e5;
 	margin-bottom:25px
@@ -117,11 +126,11 @@ h3 .dropcap {
 	background:url(../images/dropcap1.png) 0 0 no-repeat;
 	font-size:38px;
 	color:#fff;
-	text-align:center;
 	font-weight:700;
 	line-height:1.2em;
 	padding-top:6px;
 	margin-left: 60px;
+	padding-left: 12px;
 }
 h4 {
 	font-size:26px;
@@ -477,6 +486,11 @@ footer a:hover {
 #ContactForm {
 	margin-top:-4px
 }
+.send_clear{
+	margin-right: auto;
+	margin-left: auto; 
+}
+
 #ContactForm span {
 	width:109px;
 	float:left;
@@ -512,7 +526,7 @@ footer a:hover {
 	background:#080808
 }
 #ContactForm .input {
-	width:269px;
+	width:70%;
 	border:1px solid #e5e5e5;
 	background:#fff;
 	padding:3px 5px;
@@ -523,7 +537,7 @@ footer a:hover {
 }
 #ContactForm textarea {
 	overflow:auto;
-	width:549px;
+	width:70%;
 	height:258px;
 	border:1px solid #e5e5e5;
 	background:#fff;

@@ -1,6 +1,6 @@
 <?php 
 include 'functions.php';
-//echo $_SERVER['REQUEST_URI'];
+
 $title = get_title();
 $s1 = $s2 = $s3 = $s4 = $s5 = $s6 = ''; 
 
@@ -68,7 +68,7 @@ echo '<!DOCTYPE html>
                 <li id="nav4"'.$s2.' ><a href="products.php">Products<span>The best</span></a></li>
                 <li id="nav2"'.$s3.' ><a href="locations.php">Locations<span>for you</span></a></li>
                 <li id="nav3"'.$s4.' ><a href="register.php">Register<span>join us</span></a></li>
-                <li id="nav5"'.$s5.' ><a href="contacts.php">Contacts<span>Our Address</span></a></li>
+                <li id="nav5"'.$s5.' ><a href="contact.php">Contacts<span>Our Address</span></a></li>
                 <li id="nav6"'.$s6.' ><a href="login.php">Login<span>Register</span></a></li>
               </ul>
             </nav>
