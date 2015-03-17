@@ -188,6 +188,9 @@ header {
 	padding-top:34px;
 	height:148px
 }
+.slider_css{
+
+}
 #logo {
 	display:block;
 	background:url(../images/logo.png) 0 0 no-repeat;
@@ -262,7 +265,7 @@ header {
 	background:url(../images/menu_icon5_active.gif) bottom center no-repeat
 }
 .slider {
-	top:162px;
+	top:204px;
 	position:absolute;
 	z-index:1
 }

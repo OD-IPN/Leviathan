@@ -1,5 +1,9 @@
 $(window).load(function(){
 
+function test(){
+	alert();
+}
+
 function actividad(nombre, miembros, tipo, status, prioridad, MoS){
 	this.name = nombre;
 	this.team = miembros;

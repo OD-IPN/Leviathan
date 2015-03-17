@@ -50,6 +50,16 @@
 	padding-left: 5%;
 	padding-top: 20px;
 }
+#pageIndex #content {
+	padding-bottom:57px;
+	padding-left: 5%;
+	padding-top: 450px;
+}
+
+#pageIndex .cols{
+	width: 45%;
+}
+
 section.col3.pad_left2{
 	color: white;
 }
