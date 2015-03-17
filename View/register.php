@@ -43,14 +43,15 @@
           <h3 class="register_c">¿Ya estás registrado?</h3>
           <h2 class="under [ register_c ]">Inicia Sesión</h2>
           <div id="iniciar">
-          <form action="#" method="post">
+          <form action="../Controller/login.php" method="post">
             <div  class="[ wrapper ] [ register_c ]"> <span>Email</span>
               <br/>
-              <input type="text" class="login_input">
+              <input type="text" class="login_input" name="email">
             </div>
             <div  class="[ wrapper ] [ register_c ]"> <span>Contraseña</span>
               <br/>
-              <input type="text" class="login_input">
+              <input type="text" class="login_input" name="password">
+              <br/>
               <br/>
             </div>
             <div  class="[ wrapper ] [ register_c ]"> 

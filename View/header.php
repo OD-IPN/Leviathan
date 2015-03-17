@@ -1,5 +1,5 @@
 <?php 
-include 'functions.php';
+include '../Controller/functions.php';
 
 $title = get_title();
 $s1 = $s2 = $s3 = $s4 = $s5 = $s6 = ''; 
