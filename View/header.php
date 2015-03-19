@@ -53,6 +53,7 @@ echo '<!DOCTYPE html>
 <script type="text/javascript" src="js/tms_presets.js"></script>
 <script type="text/javascript" src="js/jcarousellite.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/Zurols.js"></script>
 <!--[if lt IE 9]>
 <script type="text/javascript" src="js/html5.js"></script>
 <style type="text/css">.bg{behavior:url("js/PIE.htc");}</style>
@@ -80,7 +81,7 @@ echo '<div class="body1">
                 <li id="nav2"'.$s3.' ><a href="locations.php">Locations<span>for you</span></a></li>
                 <li id="nav3"'.$s4.' ><a href="register.php">Register<span>join us</span></a></li>
                 <li id="nav5"'.$s5.' ><a href="contact.php">Contacts<span>Our Address</span></a></li>
-                <li id="nav6"'.$s6.' ><a href="login.php">Login<span>Register</span></a></li>
+                <li id="nav6"'.$s6.' ><a href="horario.php">Horario<span>Register</span></a></li>
               </ul>
             </nav>
           </div>';

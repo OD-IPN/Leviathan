@@ -1,8 +1,84 @@
 $(window).load(function(){
 
-function test(){
-	alert();
+function curso(id, sede, proyecto,  idioma, hInicio, hFin, dias, lugares, ocupados){
+	this.id = id;
+	this.sede = sede; 
+	this.proyecto = proyecto; 
+	this.idioma = idioma;
+	this.hInicio = hInicio;
+	this.hFin = hFin;
+	this.dias = dias;
+	this.lugares = lugares;
+	this.ocupados = ocupados;
 }
+
+	
+
+
+function horarios(){
+	//alert();
+	//ESCOM retirar la sede.
+	var SL1 = new curso('1', 'ESCOM', 'SL', 'INGLÉS', '9:00', '10:30', 'L-V', '30', '3');
+	var SL2 = new curso('2', 'ESCOM', 'SL', 'INGLÉS', '10:30', '12:00', 'L-V', '30', '2');
+	var SL3 = new curso('3', 'ESCOM', 'SL', 'FRANCÉS', '12:00', '13:30', 'L-V', '30', '6');
+	var SL4 = new curso('4', 'ESCOM', 'SL', 'INGLÉS', '12:00', '13:30', 'S', '30', '25');
+	var MLB1 = new curso('5', 'ESCOM', 'MLB', 'INGLÉS', '12:00', '13:30', 'L-V', '30', '6');
+	var MLB2 = new curso('6', 'ESCOM', 'MLB', 'INGLÉS', '12:00', '13:30', 'S', '30', '25');
+
+	var direccion = 'Av. Juan de Dios Bátiz esq. Av. Miguel Othón de Mendizába, Gustavo A. Madero, Lindavista, 07738 Ciudad de Mexico, D.F.';
+
+	var horarios = [];
+	horarios.push(SL1);
+	horarios.push(SL2);
+	horarios.push(SL3);
+	horarios.push(SL4);
+	horarios.push(MLB1);
+	horarios.push(MLB2);
+
+	mySede = new sede('1', 'ESCOM', horarios, direccion);	
+	console.log(mySede);
+
+	$('.container-js').append('<h2>'+mySede.name+'- Escuela Superior de Cómputo</h2>');
+	$('.container-js').append('<table><tr><td class="img-js"><img src="images/ESCOM.jpg" alt="" /></td><td class="img-js">'+mySede.direccion+'</td></tr></table>');
+	$('.container-js').append('<br />');
+	$('.container-js').append('<table class="[ horarios ][ cell ]"><tr><td> PROGRAMA </td><td> IDIOMA </td><td> HORARIO </td><td> DÍAS </td><td> DISPONIBILIDAD </td><td>  </td></tr></table>');
+	//$('.horarios').append('<tr class="[ table-container ]"></tr>');
+	
+	for (var j = 0; j < horarios.length; j++) {
+		$('.horarios').append('<tr id="col_'+j+'" class="[ table-container'+j+' ][ cell ]"></tr>');
+		$('.table-container'+j).append('<td class="cell">'+horarios[j].proyecto+'</td>');
+		$('.table-container'+j).append('<td class="cell">'+horarios[j].idioma+'</td>');
+		$('.table-container'+j).append('<td class="cell">'+horarios[j].hInicio+' - '+horarios[j].hFin+'</td>');
+		$('.table-container'+j).append('<td class="cell">'+horarios[j].dias+'</td>');
+		$('.table-container'+j).append('<td class="cell">'+(horarios[j].lugares-horarios[j].ocupados)+'</td>');
+		$('.table-container'+j).append('<td class="cell"> <img src="images/mas.png" class="Add" /> </td>');
+	}
+	//$('.horarios').append('<tr><td>A</td></tr>');
+	$('.container-js').append('<br />');
+	
+	$('.container-js').append('<p><h2>Tu Horario</h2></p>');
+	$('.container-js').append('<table class="[ horarios ][ cell ]"><tr><td> PROGRAMA </td><td> IDIOMA </td><td> HORARIO </td><td> DÍAS </td><td> DISPONIBILIDAD </td><td>  </td></tr></table>');
+}
+
+horarios();
+sumar();
+
+function sumar(){
+	$('.Add').click(function(){
+		fila = this.parentNode.parentNode;
+		clase = this.parentNode.parentNode.id;
+		console.log(clase);
+		console.log(fila);
+	});
+}
+
+function sede(id, nombre, horarios, direccion){
+	this.id=id;
+	this.name=nombre;
+	this.horarios=horarios;
+	this.direccion=direccion;
+}
+
 
 function actividad(nombre, miembros, tipo, status, prioridad, MoS){
 	this.name = nombre;
@@ -43,7 +119,7 @@ function equipo(equipo){
 	this.team = equipo;
 }
 	
-	
+function tracking(){	
 	var myMos = new MoS("MoS 1", "100%");
 	var myKPI = new KPI("KPI 1", "10");
 
@@ -89,4 +165,5 @@ function equipo(equipo){
 
 	var proyecto_1 = new proyecto("0", "proyecto_1", activities);
 	console.log(proyecto_1);
+}
 })

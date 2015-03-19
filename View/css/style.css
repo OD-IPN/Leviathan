@@ -26,6 +26,17 @@ body {
 	font-style:italic;
 	text-align: justify;
 }
+.cell{
+	border: solid;
+	border-width: 1px;
+	text-align:  center;
+}
+.img-js{
+	width: 0px;
+	padding: 10px;
+	vertical-align: middle;
+
+}
 .ic, .ic a {
 	border:0;
 	float:right;
@@ -293,6 +304,13 @@ header {
 	background-position:left
 }
 /* ============================= content ====================== */
+
+.horarios {
+	border: solid;
+	color: black;
+}
+
+
 #content {
 	padding-top:50px;
 	padding-bottom:36px
