@@ -1,21 +1,22 @@
+var miHorario = [];
 $(window).load(function(){
 
-function curso(id, sede, proyecto,  idioma, hInicio, hFin, dias, lugares, ocupados){
-	this.id = id;
-	this.sede = sede; 
-	this.proyecto = proyecto; 
-	this.idioma = idioma;
-	this.hInicio = hInicio;
-	this.hFin = hFin;
-	this.dias = dias;
-	this.lugares = lugares;
-	this.ocupados = ocupados;
-}
+	function curso(id, sede, proyecto,  idioma, hInicio, hFin, dias, lugares, ocupados){
+		this.id = id;
+		this.sede = sede; 
+		this.proyecto = proyecto; 
+		this.idioma = idioma;
+		this.hInicio = hInicio;
+		this.hFin = hFin;
+		this.dias = dias;
+		this.lugares = lugares;
+		this.ocupados = ocupados;
+	}
 
 	
 
 
-function horarios(){
+	function horarios(){
 	//alert();
 	//ESCOM retirar la sede.
 	var SL1 = new curso('1', 'ESCOM', 'SL', 'INGLÉS', '9:00', '10:30', 'L-V', '30', '3');
@@ -57,7 +58,7 @@ function horarios(){
 	$('.container-js').append('<br />');
 	
 	$('.container-js').append('<p><h2>Tu Horario</h2></p>');
-	$('.container-js').append('<table class="[ horarios ][ cell ]"><tr><td> PROGRAMA </td><td> IDIOMA </td><td> HORARIO </td><td> DÍAS </td><td> DISPONIBILIDAD </td><td>  </td></tr></table>');
+	$('.container-js').append('<table class="[ misHorarios ][ cell ]"><tr><td> PROGRAMA </td><td> IDIOMA </td><td> HORARIO </td><td> DÍAS </td><td> DISPONIBILIDAD </td><td>  </td></tr></table>');
 }
 
 horarios();
@@ -67,8 +68,24 @@ function sumar(){
 	$('.Add').click(function(){
 		fila = this.parentNode.parentNode;
 		clase = this.parentNode.parentNode.id;
-		console.log(clase);
-		console.log(fila);
+
+		$(fila).find('img').removeClass('Add');
+		$(fila).find('img').parent().html('<img src="images/menos.png" class="quitar" />');
+		
+		$('.misHorarios').append(fila);
+		quitar();
+	});
+}
+function quitar(){
+	$('.quitar').click(function(){
+		fila = this.parentNode.parentNode;
+		clase = this.parentNode.parentNode.id;
+
+		$(fila).find('img').removeClass('quitar');
+		$(fila).find('img').parent().html('<img src="images/mas.png" class="add" />');
+		
+		$('.horarios').append(fila);
+		sumar();
 	});
 }
 
@@ -104,7 +121,7 @@ function MoS(descripcion, meta){
 
 function agregar_KPI_a_MoS(actividad, KPIs){
 	var tmp = actividad.mos;
-	 console.log(tmp);
+	console.log(tmp);
 }
 
 function KPI(descripcion, meta){
@@ -118,7 +135,7 @@ function KPI(descripcion, meta){
 function equipo(equipo){
 	this.team = equipo;
 }
-	
+
 function tracking(){	
 	var myMos = new MoS("MoS 1", "100%");
 	var myKPI = new KPI("KPI 1", "10");
