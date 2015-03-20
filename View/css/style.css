@@ -27,8 +27,10 @@ body {
 	text-align: justify;
 }
 .cell{
+	/*
 	border: solid;
 	border-width: 1px;
+	*/
 	text-align:  center;
 }
 .img-js{
@@ -306,8 +308,10 @@ header {
 /* ============================= content ====================== */
 
 .horarios {
+	/*
 	border: solid;
 	color: black;
+	*/
 }
 
 
@@ -601,4 +605,8 @@ footer a:hover {
 #newsletter a:hover {
 	background:#60b000;
 	color:#fff
+}
+
+.Add,.quitar{
+	cursor: pointer;
 }

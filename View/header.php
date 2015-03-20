@@ -39,9 +39,13 @@ echo '<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="recursos/lib-sweetalert-master/sweet-alert.css" type="text/css" media="all">
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
 <link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" href="recursos/bootstrap/css/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" href="recursos/bootstrap/css/bootstrap-theme.min.css" type="text/css" media="all">
+
 <script type="text/javascript" src="js/jquery-1.6.js" ></script>
 <script type="text/javascript" src="js/cufon-yui.js"></script>
 <script type="text/javascript" src="js/cufon-replace.js"></script>
@@ -54,6 +58,9 @@ echo '<!DOCTYPE html>
 <script type="text/javascript" src="js/jcarousellite.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/Zurols.js"></script>
+<script type="text/javascript" src="recursos/lib-sweetalert-master/sweet-alert.min.js"></script>
+<script type="text/javascript" src="recursos/bootstrap/js/bootstrap.min.js"></script>
+
 <!--[if lt IE 9]>
 <script type="text/javascript" src="js/html5.js"></script>
 <style type="text/css">.bg{behavior:url("js/PIE.htc");}</style>
