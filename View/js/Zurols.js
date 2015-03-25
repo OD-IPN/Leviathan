@@ -13,8 +13,6 @@ $(window).load(function(){
 		this.ocupados = ocupados;
 	}
 
-	
-
 
 	function horarios(){
 	//alert();
@@ -182,5 +180,5 @@ function tracking(){
 
 	var proyecto_1 = new proyecto("0", "proyecto_1", activities);
 	console.log(proyecto_1);
-}
+	}
 })
