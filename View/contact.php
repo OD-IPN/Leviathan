@@ -18,7 +18,7 @@
               <div  class="textarea_box"> <span>Mensaje:</span>
                 <textarea name="textarea" cols="1" rows="1"></textarea>
               </div>
-        	<a href="#" class="send_clear">Enviar</a> <a href="#" class="send_clear">Vaciar</a> 
+              <a href="#" class="send_clear">Enviar</a> <a href="#" class="send_clear">Vaciar</a>
       	    </div>
           </form>
         </section>
