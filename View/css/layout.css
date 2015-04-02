@@ -7,6 +7,10 @@
 .col1 {
 	width:60%;
 }
+section.col1 {
+	background: antiquewhite;
+	padding-left: 25px;
+}
 .col3 {
 	width:200px;
 }

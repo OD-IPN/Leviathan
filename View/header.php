@@ -66,6 +66,7 @@ echo '<!DOCTYPE html>
 <script type="text/javascript" src="js/tms_presets.js"></script>
 <script type="text/javascript" src="js/jcarousellite.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/validate.min.js"></script>
 <script type="text/javascript" src="js/Zurols.js"></script>
 <script type="text/javascript" src="recursos/lib-sweetalert-master/sweet-alert.min.js"></script>
 <script type="text/javascript" src="recursos/bootstrap/js/bootstrap.min.js"></script>

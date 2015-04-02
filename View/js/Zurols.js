@@ -216,10 +216,47 @@ var miHorario = [];
 
 	ajax_url="../Controller/functions.php";
 	
+
+	function registrar(){
+		$('.js-registrar').click(function(e) {
+			formValidation('.js-RegisterForm');
+		});
+	}
+
+	function formValidation(forma){
+	    $(forma).validate({
+	        rules: {
+	        	//
+	        },
+	        submitHandler:function(){
+				console.log(forma);
+	            switch(forma){
+	                case '.j-register-user':
+	                    //registerUser();
+	                    break;
+
+                    case '.js-RegisterForm':
+                    	console.log('adas');
+	                    break;
+					
+					case '.login_form':
+                    	login_info();
+	                    break;
+
+	                default:
+	                    console.log('default');
+	                    break;
+	            }
+	        }
+	    });
+	}
+
+
 	function login(){
 		$('.login_submit ').click(function(e) {
-			e.preventDefault();
-			login_info();
+			//e.preventDefault();
+			formValidation('.login_form');
+			//login_info();
 		});
 	}
 

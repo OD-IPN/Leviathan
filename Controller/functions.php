@@ -117,8 +117,17 @@ function footer_javascript(){
 	if($s4!=''){
 	  echo '<script type="text/javascript">
 	  login();
+	  registrar();
 	  </script>';
 	}
+
+	if($s5!=''){
+	  echo '<script type="text/javascript">
+	  
+	  </script>';
+	}
+
+
 
 	if(isset($_SESSION)){
 	  echo '<script type="text/javascript">
