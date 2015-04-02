@@ -1,4 +1,4 @@
-<title>Contact</title>
+<title>Register</title>
 <?php include 'header.php'; ?>
     <article id="content">
       <div class="wrapper">
@@ -43,7 +43,7 @@
           <h3 class="register_c">¿Ya estás registrado?</h3>
           <h2 class="under [ register_c ]">Inicia Sesión</h2>
           <div id="iniciar">
-          <form action="../Controller/login.php" method="post">
+          <form action="../Controller/login.php" method="post" class="login_form">
             <div  class="[ wrapper ] [ register_c ]"> <span>Email</span>
               <br/>
               <input type="text" class="login_input" name="email">
@@ -55,7 +55,7 @@
               <br/>
             </div>
             <div  class="[ wrapper ] [ register_c ]"> 
-              <input type="submit" value="Ingresar" class="[ register_c ]">
+              <input type="submit" value="Ingresar" class="[ register_c ][ login_submit ]">
             </div>
             
           </form>

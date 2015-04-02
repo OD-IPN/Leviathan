@@ -1,32 +1,41 @@
 <?php 
 include '../Controller/functions.php';
+include '../Controller/Usuario.php';
+
+session_start();
 
 $title = get_title();
 $s1 = $s2 = $s3 = $s4 = $s5 = $s6 = ''; 
 
+if(isset($_SESSION['user'])){
+  $logged = true;
+}else{
+  $logged = false;
+}
+
 switch ($title) {
   case 'index.php':
-    echo $title;
+    //echo $title;
     $s1='class="active"';
     break;
   case 'products.php':
-    echo $title;
+    //echo $title;
     $s2='class="active"';
     break;
   case 'locations.php':
-    echo $title;
+    //echo $title;
     $s3='class="active"';
     break;
   case 'register.php':
-    echo $title;
+    //echo $title;
     $s4='class="active"';
     break;
   case 'contact.php':
-    echo $title;
+    //echo $title;
     $s5='class="active"';
     break;
   case 'login.php':
-    echo $title;
+    //echo $title;
     $s6='class="active"';
     break;
   
@@ -82,14 +91,29 @@ echo '<div class="body1">
           <div class="wrapper">
             <h1><a href="index.php" id="logo">Leviathan - Internal Operations</a></h1>
             <nav>
-              <ul id="menu">
-                <li id="nav1"'.$s1.' ><a href="index.php">Home<span>Welcome!</span></a></li>
-                <li id="nav4"'.$s2.' ><a href="products.php">Products<span>The best</span></a></li>
-                <li id="nav2"'.$s3.' ><a href="locations.php">Locations<span>for you</span></a></li>
-                <li id="nav3"'.$s4.' ><a href="register.php">Register<span>join us</span></a></li>
-                <li id="nav5"'.$s5.' ><a href="contact.php">Contacts<span>Our Address</span></a></li>
-                <li id="nav6"'.$s6.' ><a href="horario.php">Horario<span>Register</span></a></li>
-              </ul>
+              <ul id="menu">';
+                if(1){
+                  echo '<li id="nav1"'.$s1.' ><a href="index.php">Home<span>Inicio</span></a></li>';
+                }
+                if(1){
+                  echo '<li id="nav4"'.$s2.' ><a href="products.php">Products<span>Productos</span></a></li>';
+                }
+                if(1){
+                  echo '<li id="nav2"'.$s3.' ><a href="locations.php">Locations<span>Sedes</span></a></li>';
+                }
+                if(!$logged){
+                  echo '<li id="nav3"'.$s4.' ><a href="register.php">Login/Register<span>Registro/Iniciar Sesión</span></a></li>';
+                }
+                if(1){
+                  echo '<li id="nav5"'.$s5.' ><a href="contact.php">Contacts<span>Contacto</span></a></li>';
+                }
+                if($logged){
+                  echo '<li id="nav6"'.$s6.' ><a href="horario.php">Schedule<span>Horario</span></a></li>';
+                }
+                if($logged){
+                  echo '<li id="nav6"><a href="#" class="js-logout">Logout<span>Cerrar Sesión</span></a></li>';
+                }
+            echo '</ul>
             </nav>
           </div>';
 if($title=='index.php'){

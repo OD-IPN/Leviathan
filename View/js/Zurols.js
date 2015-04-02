@@ -35,7 +35,7 @@ var miHorario = [];
 		horarios.push(MLB2);
 
 		mySede = new sede('1', 'ESCOM', horarios, direccion);	
-		console.log(mySede);
+		//console.log(mySede);
 
 		$('.container-js').append('<h2>'+mySede.name+'- Escuela Superior de Cómputo</h2>');
 		$('.container-js').append('<table><tr><td class="img-js"><img src="images/ESCOM.jpg" alt="" /></td><td class="img-js">'+mySede.direccion+'</td></tr></table>');
@@ -213,6 +213,67 @@ var miHorario = [];
 		var proyecto_1 = new proyecto("0", "proyecto_1", activities);
 		console.log(proyecto_1);
 	}
+
+	ajax_url="../Controller/functions.php";
+	
+	function login(){
+		$('.login_submit ').click(function(e) {
+			e.preventDefault();
+			login_info();
+		});
+	}
+
+	function logout(){
+		$('.js-logout ').click(function(e) {
+			e.preventDefault();
+			
+			var post_data= {};
+	  		post_data['action']  = 'logout';
+			
+			$.post(
+				ajax_url,
+				post_data,
+				function(response){
+					console.log(response);
+					if(response=="0")setTimeout("location.href='register.php'", 1000);
+
+				});
+		});
+	}
+
+	function login_info(){
+	  var login_data= {};
+
+	  login_data['action']  = 'login';
+	  login_data['email']    = $('.login_form input[name="email"]').val();
+	  login_data['password'] = $('.login_form input[name="password"]').val();
+	  console.log(login_data);
+	  $.post(
+	        ajax_url,
+	        login_data,
+	        function(response){
+	        	console.log(response);
+	            if(response=='1'){
+	            	console.log("success");
+	            	setTimeout("location.href='index.php'", 1000);
+	            }
+	            else if(response=='0'){
+	            	console.log("Error - Password incorrecta");
+	            	//setTimeout("location.href='index.php'", 1000);
+	            }
+	            else if(response=="-1"){
+	            	console.log("Error - Usuario no registrado");
+	            	//setTimeout("location.href='index.php'", 1000);
+	            }
+	            else if(response=="-2"){
+	            	console.log("Error - Formato de e-mail incorrecto");
+	            	//setTimeout("location.href='index.php'", 1000);
+	            }
+
+	        } //response
+	    );
+	}
+
 //})
 $(window).load(function(){
 	horarios();

@@ -53,7 +53,12 @@ echo '  <!-- content end -->
 $(document).ready(function () {
     tabs.init();
 })
-</script>
-</body>
+</script>'; ?>
+
+<?php
+$title = get_title();
+footer_javascript($title);
+
+echo '</body>
 </html>';
  ?>
