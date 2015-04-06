@@ -5,7 +5,7 @@ include '../Controller/Usuario.php';
 session_start();
 
 $title = get_title();
-$s1 = $s2 = $s3 = $s4 = $s5 = $s6 = ''; 
+$s1 = $s2 = $s3 = $s4 = $s5 = $s6 = $s7 = ''; 
 
 if(isset($_SESSION['user'])){
   $logged = true;
@@ -56,6 +56,7 @@ echo '<!DOCTYPE html>
 <link rel="stylesheet" href="recursos/bootstrap/css/bootstrap-theme.min.css" type="text/css" media="all">
 
 <script type="text/javascript" src="js/jquery-1.6.js" ></script>
+<script type="text/javascript" src="js/jquery.js" ></script>
 <script type="text/javascript" src="js/cufon-yui.js"></script>
 <script type="text/javascript" src="js/cufon-replace.js"></script>
 <script type="text/javascript" src="js/Swis721_Cn_BT_400.font.js"></script>
@@ -87,9 +88,14 @@ echo '<div class="body1">
   <div class="body2">
     <div class="body5">
       <div class="main">
-        <!-- header -->
-        <header>
-          <div class="wrapper">
+        <!-- header -->';
+        if($title!='index.php'){
+          echo '<header class="header">';    
+        }else{
+          echo '<header>';  
+        }
+
+          echo '<div class="wrapper">
             <h1><a href="index.php" id="logo">Leviathan - Internal Operations</a></h1>
             <nav>
               <ul id="menu">';
@@ -110,6 +116,12 @@ echo '<div class="body1">
                 }
                 if($logged){
                   echo '<li id="nav6"'.$s6.' ><a href="horario.php">Schedule<span>Horario</span></a></li>';
+                }
+                if($logged && whoAmI()=='1'){
+                  echo '<li id="nav7"'.$s7.' ><a href="reportes.php?v=1">Reportes<span>SL</span></a></li>';
+                }
+                if($logged && whoAmI()=='2'){
+                  echo '<li id="nav7"'.$s7.' ><a href="reportes.php?v=2">Reportes<span>MLB</span></a></li>';
                 }
                 if($logged){
                   echo '<li id="nav6"><a href="#" class="js-logout">Logout<span>Cerrar Sesión</span></a></li>';

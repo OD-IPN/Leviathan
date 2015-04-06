@@ -10,6 +10,9 @@
                 <div  class="[ wrapper ]"> <span>Nombre*:</span><br/>
                   <input type="text" class="[ register_input ][ required ]" name="nombre"/>
                 </div>
+                <div  class="[ wrapper ]"> <span>Apellidos*:</span><br/>
+                  <input type="text" class="[ register_input ][ required ]" name="apellidos"/>
+                </div>
                 <div  class="[ wrapper ]"> <span>Edad*:</span><br/>
                   <input type="text" class="[ register_input ][ required ]" name="edad" />
                 </div>
@@ -34,6 +37,12 @@
                 <div  class="[ wrapper ]"  > <span>Email*:</span><br/>
                   <input type="text" class="[ register_input ][ required email ]" name="email" />
                 </div><br/>
+                <div  class="[ wrapper ]"  > <span>Contraseña*:</span><br/>
+                  <input type="password" class="[ register_input ][ required ]" name="password" id="password" />
+                </div><br/>
+                <div  class="[ wrapper ]"  > <span>Confirmación de Contraseña*:</span><br/>
+                  <input type="password" class="[ register_input ][ required ]" name="password_confirmation" id="password2" />
+                </div><br/>
                   <input type="submit" value="Send" class="js-registrar" /> | <input type="submit" value="Clear" class="js-limpiar" />
                 </div>
                 <br/>
@@ -51,7 +60,7 @@
             </div>
             <div  class="[ wrapper ] [ register_c ]"> <span>Contraseña</span>
               <br/>
-              <input type="text" class="[ login_input ][ required ]" name="password">
+              <input type="password" class="[ login_input ][ required ]" name="password">
               <br/>
               <br/>
             </div>

@@ -22,6 +22,7 @@ table, table td {
 	border-width: 1px;
 	height: 20px;
 	width: 800px;
+	padding-bottom: 20px;
 }
 img {
 	vertical-align:top;

@@ -6,10 +6,23 @@ mark, rp, rt, ruby, summary, time {
 	display:inline
 }
 
+.info_css{
+	padding-left: 10%;
+}
+
+.horarios_css{
+	padding-bottom: 10%
+}
 .error{
 	color: red;
 	font-size: 13;
 }
+
+.button{
+	position: relative;
+	left: 45%;
+}
+
 /* Left & Right alignment */
 .left {
 	float:left
@@ -17,10 +30,13 @@ mark, rp, rt, ruby, summary, time {
 .right {
 	float:right
 }
+.header .wrapper{
+	height: 21.5%;
+}
 .wrapper {
 	width:100%;
 	overflow:hidden;
-	padding-top: 5px;
+	padding-top: 10px;
 }
 /* Global properties ======================================================== */
 body {
@@ -75,10 +91,15 @@ body {
 	background:#fff
 }
 .body4 {
-	
+	background-color:black;
 }
+div .body5 {
+	background-color:floralwhite;
+}
+
 .body5 {
 	background:url(../images/bg_top_img.png) center bottom no-repeat
+
 }
 /* Global Structure ============================================================= */
 .main {
@@ -215,8 +236,8 @@ p {
 }
 /* ============================= header ====================== */
 header {
-	padding-top:34px;
-	height:148px
+	padding-top:0px;
+	
 }
 .slider_css{
 
@@ -351,6 +372,8 @@ header {
 	padding-bottom:8px;
 	text-align: justify;
 	color: black;
+	padding-left: 10%;
+	padding-right: 10%;
 }
 .pad_bot2 {
 	padding-bottom:40px;
@@ -505,11 +528,43 @@ header {
 	margin-left: auto;
 	margin-right: auto;
 }
+.product_img_sede{
+	width: 20%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.product_img_sede_location{
+	width: 30%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
 .sede_img{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	width: 80%;
+}
+.proy_img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+}
+.sedes_proyecto{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	background: ghostwhite;
+}
+.titulos_proyecto{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 85%;
+
 }
 
 /* ============================= footer ====================== */

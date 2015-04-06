@@ -61,6 +61,23 @@ $horarios = json_decode($horarios);
 			</tr>
 		</tbody>
 	</table>
+	
+	<table class="[ horarios ][ cell ] table table-striped">
+		<tbody>
+			<tr>
+				<td> SEDE </td>
+				<td> PROGRAMA </td>
+				<td> IDIOMA </td>
+				<td> HORARIO </td>
+				<td> DÍAS </td>
+				<td> DISPONIBILIDAD </td>
+				<td>  </td>
+			</tr>
+		</tbody>
+	</table>	
+
+	
+
 	<table class="[ horarios ][ cell ] table table-striped">
 		<tbody>
 			<tr>
@@ -81,7 +98,7 @@ $horarios = json_decode($horarios);
 				<td class="[ cell ]">'.$horarios[$i]->idioma.'</td>
 				<td class="[ cell ][ hr ]">'.$horarios[$i]->inicio.' - '.$horarios[$i]->fin.'</td>
 				<td class="[ cell ]">'.$horarios[$i]->modalidad.'</td>
-				<td class="[ cell ]">'.($horarios[$i]->disponibilidad - $horarios[$i]->registrados).'</td>
+				<td class="[ cell ]">'.$horarios[$i]->disponibilidad.'</td>
 				<td class="[ cell ]"> <img src="images/mas.png" id="" class="Add" onclick="sumar(this)" /> </td>
 			</tr>';
 	}

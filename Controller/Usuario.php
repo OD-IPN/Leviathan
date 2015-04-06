@@ -47,5 +47,9 @@ class Usuario
 	public function get_name(){
 		return $this->name;
 	}
+
+	public function get_roll(){
+		return $this->roll;
+	}
 }
  ?>
