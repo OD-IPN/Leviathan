@@ -9,7 +9,14 @@ mark, rp, rt, ruby, summary, time {
 .info_css{
 	padding-left: 10%;
 }
+.select{
+	background: dodgerblue;
+}
 
+.disp{
+	background: indigo;
+	color: white;
+}
 .horarios_css{
 	padding-bottom: 10%
 }

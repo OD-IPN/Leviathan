@@ -114,7 +114,8 @@ echo '<div class="body1">
                 if(1){
                   echo '<li id="nav5"'.$s5.' ><a href="contact.php">Contacts<span>Contacto</span></a></li>';
                 }
-                if($logged){
+                if(0){
+                //if($logged){
                   echo '<li id="nav6"'.$s6.' ><a href="horario.php">Schedule<span>Horario</span></a></li>';
                 }
                 if($logged && whoAmI()=='1'){

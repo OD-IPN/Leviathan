@@ -323,6 +323,38 @@
 	}
 
 
+	function horariosMLB(){
+		var contador=0;
+		var identificador ="";
+		var clase = "";
+		$('#misHorarios .disp').click(function(e){
+			console.log(this.getAttribute('class'));
+			clase = this.getAttribute('class');
+			identificador = clase.substring(0,5);
+			estado = clase.substring(5,clase.length);
+			//console.log(identificador);
+			//console.log(estado);
+
+			if(estado=='[ disp ]' && contador<3){
+				this.setAttribute("class", identificador+"[ select ]");
+				contador++;
+			}
+			else if(estado=='[ select ]'){
+				this.setAttribute("class", identificador+"[ disp ]");
+				contador--;
+			}
+
+			console.log(identificador.substring(2,3));
+			switch(identificador.substring(2,2)){
+			case 1:
+				console.log("Lunes");
+				break;
+		}
+		});
+
+	}
+
+
 	function register_info(){
 		var register_data= {};
 

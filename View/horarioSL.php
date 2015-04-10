@@ -7,6 +7,7 @@ if(!isset($_SESSION['user'])){
 }
 
 include '../Model/consultas.php';
+$usar = $_SESSION['info'];
 
 if(isset($_GET['v'])){
 	$horarios=horariosPrograma($_GET['v'], $conexion);
@@ -74,13 +75,13 @@ $horarios = json_decode($horarios);
 <?php 
 	for ($i=0; $i < sizeof($horarios); $i++) { 
 		$sede = json_decode((nombreSede($horarios[$i]->sede, $conexion)));
-		echo '<tr id="'.$horarios[$i]->inicio.'/'.$horarios[$i]->modalidad.'" class="[ '.$sede[0]->nombre.' ][ '.$horarios[$i]->programa.' ][ '.$horarios[$i]->idioma.' ][ '.$horarios[$i]->modalidad.' ]">
+		echo '<tr id="'.$horarios[$i]->inicio.'/'.$horarios[$i]->modalidad.'" class="[ '.$sede[0]->nombre.' ][ '.$horarios[$i]->programa.' ][ '.$horarios[$i]->idioma.' ][ '.$horarios[$i]->modalidad.' ]" data-id="'.$horarios[$i]->id.'">
 				<td class="[ cell ]">'.$sede[0]->nombre.'</td>
 				<td class="[ cell ]">'.$horarios[$i]->programa.'</td>
 				<td class="[ cell ]">'.$horarios[$i]->idioma.'</td>
 				<td class="[ cell ][ hr ]">'.$horarios[$i]->inicio.' - '.$horarios[$i]->fin.'</td>
 				<td class="[ cell ]">'.$horarios[$i]->modalidad.'</td>
-				<td class="[ cell ]">'.$horarios[$i]->disponibilidad.'</td>
+				<td class="[ cell ]">'.($horarios[$i]->disponibilidad - $horarios[$i]->registrados).'</td>
 				<td class="[ cell ]"> <img src="images/mas.png" id="" class="Add" onclick="sumar(this)" /> </td>
 			</tr>';
 	}
@@ -88,7 +89,7 @@ $horarios = json_decode($horarios);
  	</table>
 	
 	<p><h3>Tu Horario</h3></p>
-	<table class="[ misHorarios ][ cell ] table table-striped">
+	<table class="[ misHorarios ][ cell ] table table-striped" id="misHorarios">
 		<tr>
 			<td> SEDE </td>
 			<td> PROGRAMA </td>
@@ -96,7 +97,7 @@ $horarios = json_decode($horarios);
 			<td> HORARIO </td>
 			<td> DÍAS </td>
 			<td> DISPONIBILIDAD </td>
-			<td>  </td>
+			<td> <input type="hidden" value="<?php echo $usar->get_id(); ?>" class="user_id"> </td>
 		</tr>
 	</table>
 	<p>

@@ -69,7 +69,7 @@ for ($i=0; $i <sizeof($locations) ; $i++) {
 <?php } 
 
 if(isset($_SESSION['user'])){
-	echo '<p><a href="horarioMLB.php?v='.$_GET['v'].'"><input type="button" value="Inscribirse" class="[ btn btn-primary ][ button ]" /></a></p>';
+	echo '<p><a href="horario.php?v='.$_GET['v'].'"><input type="button" value="Inscribirse" class="[ btn btn-primary ][ button ]" /></a></p>';
 }
 else {
 	echo '<p><a href="register.php"><input type="button" value="Inicia Sesión" class="[ btn btn-primary ][ button ]" /></a></p>';

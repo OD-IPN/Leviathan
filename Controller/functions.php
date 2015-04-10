@@ -202,7 +202,7 @@ function get_title(){
 //**********************
 function footer_javascript(){
 	$title=get_title();
-	$s1 = $s2 = $s3 = $s4 = $s5 = $s6 = $s7 = ''; 
+	$s1 = $s2 = $s3 = $s4 = $s5 = $s6 = $s7 = $s8 = ''; 
 
 	switch ($title) {
 	  case 'index.php':
@@ -237,6 +237,10 @@ function footer_javascript(){
 	    echo $title;
 	    $s7='class="active"';
 	    break;
+	  case 'horarioMLB.php':
+	    echo $title;
+	    $s8='class="active"';
+	    break;
 	  
 	  default:
 	    # code...
@@ -259,6 +263,11 @@ function footer_javascript(){
 	if($s7!=''){
 	  echo '<script type="text/javascript">	  
 		reportes();
+	  </script>';
+	}
+	if($s8!=''){
+	  echo '<script type="text/javascript">	  
+		horariosMLB();
 	  </script>';
 	}
 
