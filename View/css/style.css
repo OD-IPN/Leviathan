@@ -12,6 +12,10 @@ mark, rp, rt, ruby, summary, time {
 .select{
 	background: dodgerblue;
 }
+.inputBorder{
+	border: solid 1px; 
+	border-color: beige;
+}
 
 .disp{
 	background: indigo;

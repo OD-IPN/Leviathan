@@ -48,7 +48,7 @@
 			console.log(miHorario);
 			return 0;
 		}else
-			console.log("algo salió mla al eliminar la hora");			
+		console.log("algo salió mla al eliminar la hora");			
 	}
 
 	function filtrar(){
@@ -150,7 +150,7 @@
 		}
 
 		$('.misHorarios tr').show();
-	
+
 	}
 
 	function registrarGrupos(){
@@ -187,50 +187,50 @@
 			}	
 
 		});
-	}
+}
 
 
-	function reportes(){
-		$('.reportes_js').click(function(e){
-			var post_data= {};
-			post_data['action']  = 'reportes';
-			post_data['programa']  = $('#programa').val();;
-			post_data['tipo']    = $('.reporte select[name="reportes"]').val();
-			console.log(post_data);
+function reportes(){
+	$('.reportes_js').click(function(e){
+		var post_data= {};
+		post_data['action']  = 'reportes';
+		post_data['programa']  = $('#programa').val();;
+		post_data['tipo']    = $('.reporte select[name="reportes"]').val();
+		console.log(post_data);
 
-			$.post(
-				ajax_url,
-				post_data,
-				function(response){
-					console.log(response);
-					$('.reporteInfo').append(""+response);
+		$.post(
+			ajax_url,
+			post_data,
+			function(response){
+				console.log(response);
+				$('.reporteInfo').append(""+response);
 
-				});
+			});
 		
-		});
-	}
+	});
+}
 
 
-	ajax_url="../Controller/functions.php";
+ajax_url="../Controller/functions.php";
 
 
-	function registrar(){
-		$('.js-registrar').click(function(e) {
-			formValidation('.js-RegisterForm');
-		});
-	}
+function registrar(){
+	$('.js-registrar').click(function(e) {
+		formValidation('.js-RegisterForm');
+	});
+}
 
-	function formValidation(forma){
-		$(forma).validate({
-			rules: {
-				password_confirmation:{
-					equalTo: "#password"
-				},
-				password_confirmation2:{
-					equalTo: "#password2"
-				}
+function formValidation(forma){
+	$(forma).validate({
+		rules: {
+			password_confirmation:{
+				equalTo: "#password"
 			},
-			submitHandler:function(){
+			password_confirmation2:{
+				equalTo: "#password2"
+			}
+		},
+		submitHandler:function(){
 			console.log(forma);
 			switch(forma){
 				case '.j-register-user':
@@ -254,59 +254,59 @@
 }
 
 
-	function login(){
-		$('.login_submit ').click(function(e) {
-				formValidation('.login_form');
-			});
-	}
+function login(){
+	$('.login_submit ').click(function(e) {
+		formValidation('.login_form');
+	});
+}
 
-	function logout(){
-		$('.js-logout ').click(function(e) {
-			e.preventDefault();
+function logout(){
+	$('.js-logout ').click(function(e) {
+		e.preventDefault();
 
-			var post_data= {};
-			post_data['action']  = 'logout';
+		var post_data= {};
+		post_data['action']  = 'logout';
 
-			$.post(
-				ajax_url,
-				post_data,
-				function(response){
-					console.log(response);
-					if(response=="0")setTimeout("location.href='register.php'", 1000);
-
-				});
-		});
-	}
-
-	function inscribir(post_data){
-		
 		$.post(
 			ajax_url,
 			post_data,
 			function(response){
 				console.log(response);
+				if(response=="0")setTimeout("location.href='register.php'", 1000);
+
 			});
-		
-	}
+	});
+}
 
-	function login_info(){
-		var login_data= {};
+function inscribir(post_data){
 
-		login_data['action']  = 'login';
-		login_data['email']    = $('.login_form input[name="email"]').val();
-		login_data['password'] = $('.login_form input[name="password"]').val();
+	$.post(
+		ajax_url,
+		post_data,
+		function(response){
+			console.log(response);
+		});
 
-		$.post(
-			ajax_url,
-			login_data,
-			function(response){
-				response = response[response.length-1];
-				if(response=='1'){
-					console.log("success");
-					setTimeout("location.href='index.php'", 1000);
-				}
-				else if(response=='0'){
-					console.log("Error - Password incorrecta");
+}
+
+function login_info(){
+	var login_data= {};
+
+	login_data['action']  = 'login';
+	login_data['email']    = $('.login_form input[name="email"]').val();
+	login_data['password'] = $('.login_form input[name="password"]').val();
+
+	$.post(
+		ajax_url,
+		login_data,
+		function(response){
+			response = response[response.length-1];
+			if(response=='1'){
+				console.log("success");
+				setTimeout("location.href='index.php'", 1000);
+			}
+			else if(response=='0'){
+				console.log("Error - Password incorrecta");
 		            	//setTimeout("location.href='index.php'", 1000);
 		            }
 		            else if(response=="2"){
@@ -320,68 +320,209 @@
 
 		        } //response
 		        );
-	}
+}
 
 
-	function horariosMLB(){
-		var contador=0;
-		var identificador ="";
-		var clase = "";
-		$('#misHorarios .disp').click(function(e){
-			console.log(this.getAttribute('class'));
-			clase = this.getAttribute('class');
-			identificador = clase.substring(0,5);
-			estado = clase.substring(5,clase.length);
-			//console.log(identificador);
-			//console.log(estado);
+function horariosMLB(){
+	var contador=0, lunes=0, martes=0, miercoles=0, jueves=0, viernes=0;
+	var identificador ="";
+	var clase = "";
+	var clases = {};
+	clases['1']= [];
+	clases['2']= [];
+	clases['3']= [];
+	clases['4']= [];
+	clases['5']= [];
 
-			if(estado=='[ disp ]' && contador<3){
-				this.setAttribute("class", identificador+"[ select ]");
-				contador++;
-			}
-			else if(estado=='[ select ]'){
-				this.setAttribute("class", identificador+"[ disp ]");
-				contador--;
-			}
+	$('#misHorarios .disp').click(function(e){
+		clase = this.getAttribute('class');
+		identificador = clase.substring(0,5);
+		estado = clase.substring(5,clase.length);
+		var caso = identificador.substring(2,3);
+		var valor = this.childNodes[0]['data'];
 
-			console.log(identificador.substring(2,3));
-			switch(identificador.substring(2,2)){
-			case 1:
-				console.log("Lunes");
+		if(estado=='[ disp ]' && contador<3){
+			switch(caso){
+				case '1':
+					if(lunes<2){
+						this.setAttribute("class", identificador+"[ select ]");		
+						lunes++;
+						contador++;
+						clases['1'].push(valor);
+						clases['1'].sort();
+						}
 				break;
+				
+				case '2':
+					if(martes<2){
+						this.setAttribute("class", identificador+"[ select ]");		
+						martes++;
+						contador++;
+						clases['2'].push(valor);
+						clases['2'].sort();
+						}
+				break;
+				
+				case '3':
+					if(miercoles<2){
+						this.setAttribute("class", identificador+"[ select ]");		
+						miercoles++;
+						contador++;
+						clases['3'].push(valor);
+						clases['3'].sort();
+						}
+				break;
+				
+				case '4':
+					if(jueves<2){
+						this.setAttribute("class", identificador+"[ select ]");		
+						jueves++;
+						contador++;
+						clases['4'].push(valor);
+						clases['4'].sort();
+						}
+				break;
+				
+				case '5':
+					if(viernes<2){
+						this.setAttribute("class", identificador+"[ select ]");		
+						viernes++;
+						contador++;
+						clases['5'].push(valor);
+						clases['5'].sort();
+						}
+				break;
+			}
 		}
-		});
+		else if(estado=='[ select ]'){
+			this.setAttribute("class", identificador+"[ disp ]");
+			contador--;
+			switch(caso){
+				case '1':
+					for (var index = 0; index < clases['1'].length; index++) {
+						if(clases['1'][index]==valor){
+							clases['1'].splice(index,1);
+						}
+					};
+					lunes--;
+					break;
+					
+				case '2':
+					for (var index = 0; index < clases['2'].length; index++) {
+						if(clases['2'][index]==valor){
+							clases['2'].splice(index,1);
+						}
+					};
+					martes--;
+					break;
+				
+				case '3':
+					for (var index = 0; index < clases['3'].length; index++) {
+						if(clases['3'][index]==valor){
+							clases['3'].splice(index,1);
+						}
+					};
+					miercoles--;
+					break;
+				case '4':
+				for (var index = 0; index < clases['4'].length; index++) {
+					if(clases['4'][index]==valor){
+						clases['4'].splice(index,1);
+					}
+				};
+				jueves--;
+				break;
+				case '5':
+				for (var index = 0; index < clases['5'].length; index++) {
+					if(clases['5'][index]==valor){
+						clases['5'].splice(index,1);
+					}
+				};
+				viernes--;
+				break;
+			}
+		}
+		actualizarInfo(clases);
+	});
+}
 
-	}
+function actualizarInfo(clases){
+	console.log(clases);
+	var conteo=0, dia;
+	var mostrador;
+	document.getElementById('data1').innerText="";
+	document.getElementById('data2').innerText="";
+	document.getElementById('data3').innerText="";
 
-
-	function register_info(){
-		var register_data= {};
-
-		register_data['action']  = 'register';
-		register_data['nombre']  = $('.js-RegisterForm input[name="nombre"]').val();
-		register_data['apellido']  = $('.js-RegisterForm input[name="apellidos"]').val();
-		register_data['edad']  = $('.js-RegisterForm input[name="edad"]').val();
-		register_data['direccion']  = $('.js-RegisterForm input[name="direccion"]').val();
-		register_data['tel']  = $('.js-RegisterForm input[name="tel"]').val();
-		register_data['escuela']  = $('.js-RegisterForm select[name="escuela"]').val();
-		register_data['externo']  = $('.js-RegisterForm input[name="externo"]').val();
-		register_data['campus']  = $('.js-RegisterForm input[name="campus"]').val();
-		register_data['email']  = $('.js-RegisterForm input[name="email"]').val();
-		register_data['password']  = $('.js-RegisterForm input[name="password"]').val();
-
-		console.log(register_data);
-		$.post(
-			ajax_url,
-			register_data,
-			function(response){
-				console.log(response);
-				if(response=='1'){
-					console.log("success");
-					setTimeout("location.href='index.php'", 1000);
+	for (var iknus = 1; iknus <= 5; iknus++) {
+		if(clases[iknus].length>0){
+			for (var jk = 0; jk < clases[iknus].length; jk++){
+				switch(iknus){
+					case 1:
+						dia= "Lunes\n";
+					break;
+					case 2:
+						dia= "Martes\n";
+					break;
+					case 3:
+						dia= "Miércoles\n";
+					break;
+					case 4:
+						dia= "Jueves\n";
+					break;
+					case 5:
+						dia= "Viernes\n";
+					break;
 				}
-				else if(response=='0'){
-					console.log("Error - Password incorrecta");
+				switch(conteo){
+					case 0:
+						mostrador=document.getElementById('data1');
+						mostrador.innerText=dia+clases[iknus][jk];	
+						conteo++;
+					break;
+					case 1:
+						mostrador=document.getElementById('data2');
+						mostrador.innerText=dia+clases[iknus][jk];	
+						conteo++;
+					break;
+					case 2:
+						mostrador=document.getElementById('data3');
+						mostrador.innerText=dia+clases[iknus][jk];	
+						conteo++;
+					break;
+				}
+			}
+		}
+	};
+}
+
+function register_info(){
+	var register_data= {};
+
+	register_data['action']  = 'register';
+	register_data['nombre']  = $('.js-RegisterForm input[name="nombre"]').val();
+	register_data['apellido']  = $('.js-RegisterForm input[name="apellidos"]').val();
+	register_data['edad']  = $('.js-RegisterForm input[name="edad"]').val();
+	register_data['direccion']  = $('.js-RegisterForm input[name="direccion"]').val();
+	register_data['tel']  = $('.js-RegisterForm input[name="tel"]').val();
+	register_data['escuela']  = $('.js-RegisterForm select[name="escuela"]').val();
+	register_data['externo']  = $('.js-RegisterForm input[name="externo"]').val();
+	register_data['campus']  = $('.js-RegisterForm input[name="campus"]').val();
+	register_data['email']  = $('.js-RegisterForm input[name="email"]').val();
+	register_data['password']  = $('.js-RegisterForm input[name="password"]').val();
+
+	console.log(register_data);
+	$.post(
+		ajax_url,
+		register_data,
+		function(response){
+			console.log(response);
+			if(response=='1'){
+				console.log("success");
+				setTimeout("location.href='index.php'", 1000);
+			}
+			else if(response=='0'){
+				console.log("Error - Password incorrecta");
 		            	//setTimeout("location.href='index.php'", 1000);
 		            }
 		            else if(response=="-1"){
@@ -395,7 +536,7 @@
 
 		        } //response
 		        );
-	}
+}
 
 //})
 	$(window).load(function(){

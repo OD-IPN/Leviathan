@@ -103,8 +103,8 @@ $horarios = json_decode($horarios);
  	</table>
 	
 	<br/>
-	<h3>Personaliza tu propio horario. - Inglés</h3> 
-	<table class="[ misHorarios ][ cell ] table table-striped" id="misHorarios">
+	<h3>Personaliza tu propio horario.</h3> 
+	<table class="[ misHorarios ][ cell ][ table table-striped ]" id="misHorarios">
 		<tr>
 			<td> LUNES </td>
 			<td> MARTES </td>
@@ -113,63 +113,58 @@ $horarios = json_decode($horarios);
 			<td> VIERNES </td>
 		</tr>
 		<tr>
-			<td class="[ 1 ][ disp ]"> 8:00 - 9:30 </td>
-			<td class="[ 2 ][ disp ]"> 8:00 - 9:30 </td>
-			<td class="[ 3 ][ disp ]"> 8:00 - 9:30 </td>
-			<td class="[ 4 ][ disp ]"> 8:00 - 9:30 </td>
-			<td class="[ 5 ][ disp ]"> 8:00 - 9:30 </td>
+			<td class="[ 1 ][ disp ]">08:30 - 10:00</td>
+			<td class="[ 2 ][ disp ]">08:30 - 10:00</td>
+			<td class="[ 3 ][ disp ]">08:30 - 10:00</td>
+			<td class="[ 4 ][ disp ]">08:30 - 10:00</td>
+			<td class="[ 5 ][ disp ]">08:30 - 10:00</td>
 		</tr>
 		<tr>
-			<td class="[ 1 ][ disp ]"> 9:30 - 11:00 </td>
-			<td class="[ 2 ][ disp ]"> 9:30 - 11:00 </td>
-			<td class="[ 3 ][ disp ]"> 9:30 - 11:00 </td>
-			<td class="[ 4 ][ disp ]"> 9:30 - 11:00 </td>
-			<td class="[ 5 ][ disp ]"> 9:30 - 11:00 </td>
+			<td class="[ 1 ][ disp ]">10:30 - 12:00</td>
+			<td class="[ 2 ][ disp ]">10:30 - 12:00</td>
+			<td class="[ 3 ][ disp ]">10:30 - 12:00</td>
+			<td class="[ 4 ][ disp ]">10:30 - 12:00</td>
+			<td class="[ 5 ][ disp ]">10:30 - 12:00</td>
 		</tr>
 		<tr>
-			<td class="[ 1 ][ disp ]"> 11:00 - 13:30 </td>
-			<td class="[ 2 ][ disp ]"> 11:00 - 13:30 </td>
-			<td class="[ 3 ][ disp ]"> 11:00 - 13:30 </td>
-			<td class="[ 4 ][ disp ]"> 11:00 - 13:30 </td>
-			<td class="[ 5 ][ disp ]"> 11:00 - 13:30 </td>
+			<td class="[ 1 ][ disp ]">12:00 - 13:30</td>
+			<td class="[ 2 ][ disp ]">12:00 - 13:30</td>
+			<td class="[ 3 ][ disp ]">12:00 - 13:30</td>
+			<td class="[ 4 ][ disp ]">12:00 - 13:30</td>
+			<td class="[ 5 ][ disp ]">12:00 - 13:30</td>
 		</tr>
 		<tr>
-			<td class="[ 1 ][ disp ]"> 12:30 - 14:00</td>
-			<td class="[ 2 ][ disp ]"> 12:30 - 14:00</td>
-			<td class="[ 3 ][ disp ]"> 12:30 - 14:00</td>
-			<td class="[ 4 ][ disp ]"> 12:30 - 14:00</td>
-			<td class="[ 5 ][ disp ]"> 12:30 - 14:00</td>
-		</tr>
-		<tr>
-			<td class="[ 1 ][ disp ]"> 14:00 - 15:30 </td>
-			<td class="[ 2 ][ disp ]"> 14:00 - 15:30 </td>
-			<td class="[ 3 ][ disp ]"> 14:00 - 15:30 </td>
-			<td class="[ 4 ][ disp ]"> 14:00 - 15:30 </td>
-			<td class="[ 5 ][ disp ]"> 14:00 - 15:30 </td>
-		</tr>
-		<tr>
-			<td class="[ 1 ][ disp ]"> 15:30 - 17:00 </td>
-			<td class="[ 2 ][ disp ]"> 15:30 - 17:00 </td>
-			<td class="[ 3 ][ disp ]"> 15:30 - 17:00 </td>
-			<td class="[ 4 ][ disp ]"> 15:30 - 17:00 </td>
-			<td class="[ 5 ][ disp ]"> 15:30 - 17:00 </td>
-		</tr>
-		<tr>
-			<td class="[ 1 ][ disp ]"> 17:00 - 19:30 </td>
-			<td class="[ 2 ][ disp ]"> 17:00 - 19:30 </td>
-			<td class="[ 3 ][ disp ]"> 17:00 - 19:30 </td>
-			<td class="[ 4 ][ disp ]"> 17:00 - 19:30 </td>
-			<td class="[ 5 ][ disp ]"> 17:00 - 19:30 </td>
-		</tr>
-		<tr>
-			<td class="[ 0 ][ disp ]"> 19:30 - 21:00 </td>
-			<td class="[ 0 ][ disp ]"> 19:30 - 21:00 </td>
-			<td class="[ 0 ][ disp ]"> 19:30 - 21:00 </td>
-			<td class="[ 0 ][ disp ]"> 19:30 - 21:00 </td>
-			<td class="[ 0 ][ disp ]"> 19:30 - 21:00 </td>
+			<td class="[ 1 ][ disp ]">13:30 - 15:00</td>
+			<td class="[ 2 ][ disp ]">13:30 - 15:00</td>
+			<td class="[ 3 ][ disp ]">13:30 - 15:00</td>
+			<td class="[ 4 ][ disp ]">13:30 - 15:00</td>
+			<td class="[ 5 ][ disp ]">13:30 - 15:00</td>
 		</tr>
 	</table>
-
+	<table class="[ horarioCustom ][ cell ][ table table-striped ]">
+		<tr>
+			<td> SEDE </td>
+			<td> NOMBRE </td>
+			<td> IDIOMA </td>
+			<td> </td>
+			<td> DÍAS </td>
+			<td> </td>
+		</tr>
+		<tr>
+			<td>ESCOM</td>
+			<td><input type="text" class="[ inputBorder ]" name="nombreGrupo"/></td>
+			<td>
+				<select name="idiomas" id="idiomas">
+					<option value="Ingles">Inglés</option>
+					<option value="Aleman">Alemán</option>
+					<option value="Frances">Francés</option>
+				</select>
+			</td>
+			<td id="data1"></td>
+			<td id="data2"></td>
+			<td id="data3"></td>
+		</tr>
+	</table>
 	<p>
 		<br>
 		<a href="#"><input type="button" value="Inscribirse" class="[ btn btn-primary ][ button ][ js-inscribir ]" /></a>
