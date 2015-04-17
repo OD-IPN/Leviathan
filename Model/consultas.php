@@ -158,6 +158,72 @@ function registrarInscripcion($inscripcion, $conexion){
 	//var_dump($usuario);
 }
 
+function dia($valor){
+	switch ($valor) {
+		case 1:
+			return 'Lunes';
+			break;
+		
+		case 2:
+			return 'Martes';
+			break;
+		
+		case 3:
+			return 'Miércoles';
+			break;
+		
+		case 4:
+			return 'Jueves';
+			break;
+		
+		case 5:
+			return 'Viernes';
+			break;
+		
+		default:
+			# code...
+			break;
+	}
+}
+
+//registrar inscripción de grupo MLB
+function registrarInscripcionMLB($inscripcion, $conexion){
+	$d1 = $d2 = $d3 = $h1 = $h2 = $h3 = $contador=0;
+	for ($i=1; $i <= 5; $i++) { 
+		if(isset($inscripcion['horario'][$i])){
+			for ($k=0; $k < sizeof($inscripcion['horario'][$i]); $k++) { 
+				switch ($contador) {
+					case 0:
+						$d1=dia($i);
+						$h1=$inscripcion['horario'][$i][$k];
+						$contador++;
+						break;
+					
+					case 1:
+						$d2=dia($i);
+						$h2=$inscripcion['horario'][$i][$k];
+						$contador++;
+						break;
+					
+					case 2:
+						$d3=dia($i);
+						$h3=$inscripcion['horario'][$i][$k];
+						$contador++;
+						break;
+					
+					default:
+						# code...
+						break;
+				}
+			}
+		}
+	}
+
+	$query="INSERT INTO `mlb_grupos` (`id`, `user_id`, `idioma`, `sede`, `dia_1`, `hr_1`, `dia_2`, `hr_2`, `dia_3`, `hr_3`, `nombre`, `registrados`, `status`) VALUES (NULL, '".$inscripcion['id']."', '".$inscripcion['idioma']."', '".$inscripcion['sede']."', '".$d1."', '".$h1."', '".$d2."', '".$h2."', '".$d3."', '".$h3."', '".$inscripcion['nombre']."', '".$inscripcion['registrados']."', '0');";
+	$res = mysql_query($query, $conexion) or die ("Error: ".mysql_error());
+	var_dump($res);
+}
+
 
 //Consultar TODAS las sedes.
 function consultaSedes($conexion){

@@ -33,16 +33,6 @@ echo '  <!-- content end -->
             <li><a href="#"><img src="images/icon4.jpg" alt="">Delicious</a></li>
           </ul>
         </section>
-        <section class="col2 right">
-          <h4>Newsletter</h4>
-          <form id="newsletter" action="#" method="post">
-            <div>
-              <div class="wrapper">
-                <input class="input" type="text" placeholder="Type Your Email Here">
-              </div>
-              <a href="#" class="button">Subscribe</a> </div>
-          </form>
-        </section>
       </div>
     </article>
     <!-- content end -->

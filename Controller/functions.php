@@ -19,6 +19,10 @@ if(isset($_POST['action'])){
 			inscribir_SL();
 			break;
 
+		case 'registrar_grupo_MLB':
+			inscribir_MLB();
+			break;
+
 		case 'reportes':
 			reportes();
 			break;
@@ -172,6 +176,19 @@ function inscribir_SL(){
 }
 
 
+//**********************
+//Función para registro de clases de un usuario.
+//@Return void.
+//**********************
+
+function inscribir_MLB(){
+	include '../Model/consultas.php'; 
+	include 'Usuario.php';
+	//consultarCupo($conexion);
+	registrarInscripcionMLB($_POST, $conexion);
+}
+
+
 
 //**********************
 //Función para cerrar sesión de usuario.
@@ -268,6 +285,7 @@ function footer_javascript(){
 	if($s8!=''){
 	  echo '<script type="text/javascript">	  
 		horariosMLB();
+		inscribirMLB();
 	  </script>';
 	}
 

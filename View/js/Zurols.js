@@ -1,4 +1,5 @@
 	var miHorario = [];
+	var clases = {};
 
 	function comprobarHorario(horaInicio){
 		if (miHorario.length == 0)
@@ -234,23 +235,23 @@ function formValidation(forma){
 			console.log(forma);
 			switch(forma){
 				case '.j-register-user':
-	                    //registerUser();
-	                    break;
+                //registerUser();
+                break;
 
-	                    case '.js-RegisterForm':
-	                    register_info();
-	                    break;
+                case '.js-RegisterForm':
+                register_info();
+                break;
 
-	                    case '.login_form':
-	                    login_info();
-	                    break;
+                case '.login_form':
+                login_info();
+                break;
 
-	                    default:
-	                    console.log('default');
-	                    break;
-	                }
-	            }
-	        });
+                default:
+                console.log('default');
+                break;
+            }
+        }
+    });
 }
 
 
@@ -286,7 +287,19 @@ function inscribir(post_data){
 		function(response){
 			console.log(response);
 		});
+}
 
+function inscribir_MLB(post_data){
+	$.post(
+		ajax_url,
+		post_data,
+		function(response){
+			console.log(response);
+			if(response){
+				console.log("Registrado");
+				setTimeout("location.href='miHorario.php'", 1000);
+			}
+		});
 }
 
 function login_info(){
@@ -327,7 +340,6 @@ function horariosMLB(){
 	var contador=0, lunes=0, martes=0, miercoles=0, jueves=0, viernes=0;
 	var identificador ="";
 	var clase = "";
-	var clases = {};
 	clases['1']= [];
 	clases['2']= [];
 	clases['3']= [];
@@ -443,6 +455,13 @@ function horariosMLB(){
 			}
 		}
 		actualizarInfo(clases);
+		if(contador==3){
+			document.getElementById("submitBtn").disabled = false;
+		}
+		else{
+			document.getElementById("submitBtn").disabled = true;	
+		}
+
 	});
 }
 
@@ -536,6 +555,27 @@ function register_info(){
 
 		        } //response
 		        );
+}
+
+function inscribirMLB(){
+		$('.js-inscribir').click(function(e){
+			e.preventDefault();
+			confirmacion = confirm("¿Estás seguro de realizar tu inscripción?");
+			console.log(confirmacion);
+			if(confirmacion){
+					var post_data= {};
+					post_data['action']  = "registrar_grupo_MLB";
+					post_data['id']  = $('.user_id').val();
+					post_data['nombre'] = $('#nombreGrupo').val();
+					post_data['sede'] = '1';
+					post_data['programa'] = '2';
+					post_data['idioma'] = $('#idiomas').val();
+					post_data['horario'] = clases;
+					post_data['registrados'] = $('#integrantes').val();
+					console.log(post_data);
+					inscribir_MLB(post_data);
+				};
+		});
 }
 
 //})

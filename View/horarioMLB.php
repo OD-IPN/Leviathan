@@ -146,18 +146,28 @@ $horarios = json_decode($horarios);
 			<td> SEDE </td>
 			<td> NOMBRE </td>
 			<td> IDIOMA </td>
+			<td> PERSONAS </td>
 			<td> </td>
 			<td> DÍAS </td>
-			<td> </td>
+			<td> <input type="hidden" value="<?php echo $usar->get_id(); ?>" class="user_id"> </td>
 		</tr>
 		<tr>
 			<td>ESCOM</td>
-			<td><input type="text" class="[ inputBorder ]" name="nombreGrupo"/></td>
+			<td><input type="text" class="[ inputBorder ]" name="nombreGrupo" placeholder="Nombre Del Grupo" id="nombreGrupo" /></td>
 			<td>
 				<select name="idiomas" id="idiomas">
 					<option value="Ingles">Inglés</option>
 					<option value="Aleman">Alemán</option>
 					<option value="Frances">Francés</option>
+				</select>
+			</td>
+			<td>
+				<select name="integrantes" id="integrantes">
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
 				</select>
 			</td>
 			<td id="data1"></td>
@@ -167,7 +177,7 @@ $horarios = json_decode($horarios);
 	</table>
 	<p>
 		<br>
-		<a href="#"><input type="button" value="Inscribirse" class="[ btn btn-primary ][ button ][ js-inscribir ]" /></a>
+		<a href="#"><input type="button" value="Inscribirse" class="[ btn btn-primary ][ button ][ js-inscribir ]" id="submitBtn" disabled="true" /></a>
 	</p>
 </div>
 <?php include 'footer.php'; ?>
